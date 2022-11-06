@@ -4,7 +4,7 @@ function Greeting() {
   const name = import.meta.env.VITE_FIRSTNAME;
   const hour = new Date().getHours();
   const greeting = `Good ${
-    hour < 12 ? "morning" : hour < 18 ? "afternoon" : "evening"
+    (hour < 12 && "morning") || (hour < 18 && "afternoon") || "evening"
   }, ${name}`;
 
   return (
