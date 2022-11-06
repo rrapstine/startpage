@@ -1,5 +1,6 @@
 import DateAndTimeWidget from "components/DateAndTimeWidget";
 import Greeting from "components/Greeting";
+import NotificationsWidget from "components/NotificationsWidget";
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
           <DateAndTimeWidget />
 
           {/* NotificationsWidget */}
-          <div data-widget="notifications">
+          <NotificationsWidget>
             <div id="app-selector" className="flex flex-row gap-4">
               {/* App icons go here */}
             </div>
@@ -21,7 +22,7 @@ function App() {
             <div id="notifications-container">
               {/* Notifications go here */}
             </div>
-          </div>
+          </NotificationsWidget>
         </div>
 
         <div className="right pl-8">
