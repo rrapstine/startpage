@@ -1,28 +1,17 @@
+import AppSelector from "components/AppSelector";
 import DateAndTimeWidget from "components/DateAndTimeWidget";
 import Greeting from "components/Greeting";
 import NotificationsWidget from "components/NotificationsWidget";
 
 function App() {
   return (
-    <div id="app-wrapper" className="h-screen p-16">
+    <div id="app-wrapper" className="bg-home h-screen p-16">
       <Greeting />
 
       <main className="grid grid-cols-2 gap-16">
         <div className="left pr-8">
           <DateAndTimeWidget />
-
-          {/* NotificationsWidget */}
-          <NotificationsWidget>
-            <div id="app-selector" className="flex flex-row gap-4">
-              {/* App icons go here */}
-            </div>
-            <h2 className="border-b-2 border-white text-base font-medium text-white">
-              Reminders
-            </h2>
-            <div id="notifications-container">
-              {/* Notifications go here */}
-            </div>
-          </NotificationsWidget>
+          <NotificationsWidget />
         </div>
 
         <div className="right pl-8">
