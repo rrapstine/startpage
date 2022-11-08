@@ -1,24 +1,23 @@
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import ErrorBoundary from "components/ErrorBoundary";
 import AppSelector from "./AppSelector";
 import { getAppList, toTitleCase } from "utils/helpers";
 
 function NotificationsWidget() {
-  // Get list of apps from environment variable
   const appList = getAppList();
+  const [selectedApp, setSelectedApp] = useState(appList[0].toLowerCase());
 
-  const [selectedApp, setSelectedApp] = useState("");
-
-  useEffect(() => {
+  // Apply active class to selected app icon
+  useLayoutEffect(() => {
     const appIcons = document.querySelectorAll("[data-app] > svg");
     appIcons.forEach((icon) => {
       // @ts-ignore
       if (icon.parentElement.getAttribute("data-app") === selectedApp) {
         // @ts-ignore
-        icon.firstChild.setAttribute("fill", "white");
+        icon.classList.add("active");
       } else {
         // @ts-ignore
-        icon.firstChild.setAttribute("fill", "#BBBBBB");
+        icon.classList.remove("active");
       }
     });
   }, [selectedApp]);

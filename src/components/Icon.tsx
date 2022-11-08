@@ -3,10 +3,11 @@ import { useDynamicSvgImport } from "utils/hooks/useDynamicSvgImport";
 
 interface Props {
   name: string;
+  keyNum: number;
   onClick: () => void;
 }
 
-function Icon({ name, onClick }: Props) {
+function Icon({ name, keyNum, onClick }: Props) {
   const { loading, Icon } = useDynamicSvgImport(name);
 
   return (
@@ -16,7 +17,7 @@ function Icon({ name, onClick }: Props) {
       )}
       {Icon && (
         <button className="h-6 w-6" data-app={name} onClick={onClick}>
-          <Icon className="h-full w-full hover:fill-white" />
+          <Icon className={`h-full w-full ${keyNum == 0 ? "active" : ""}`} />
         </button>
       )}
     </>

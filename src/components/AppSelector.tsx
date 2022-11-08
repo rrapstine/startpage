@@ -32,6 +32,7 @@ function AppSelector({ apps, setSelectedApp }: Props) {
         <Icon
           name={app.toLowerCase()}
           key={key}
+          keyNum={key}
           onClick={() => handleClick(app)}
         />
       ))}
