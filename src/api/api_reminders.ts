@@ -14,7 +14,13 @@ myCloud.on("ready", () => {
     myCloud.securityCode = code;
   }
 
-  console.log("Successfully logged in to iCloud");
+  // Get all reminders
+  const tasks = async () => {
+    console.log(tasks);
+    return await myCloud.Reminders.getOpenTasks();
+  };
+
+  return tasks;
 });
 
 export default myCloud;

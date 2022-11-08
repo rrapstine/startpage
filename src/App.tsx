@@ -1,7 +1,7 @@
 import AppSelector from "components/AppSelector";
 import DateAndTimeWidget from "components/DateAndTimeWidget";
 import Greeting from "components/Greeting";
-import NotificationsWidget from "components/NotificationsWidget";
+import AppContainerWidget from "components/AppContainerWidget";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <main className="grid grid-cols-2 gap-16">
         <div className="left pr-8">
           <DateAndTimeWidget />
-          <NotificationsWidget />
+          <AppContainerWidget />
         </div>
 
         <div className="right pl-8">

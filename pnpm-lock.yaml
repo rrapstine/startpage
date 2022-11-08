@@ -17,6 +17,7 @@ specifiers:
   typescript: ^4.6.4
   vite: ^3.2.0
   vite-plugin-svgr: ^2.2.2
+  vite-require: ^0.2.3
   vite-tsconfig-paths: ^3.5.2
 
 dependencies:
@@ -38,6 +39,7 @@ devDependencies:
   typescript: 4.8.4
   vite: 3.2.2
   vite-plugin-svgr: 2.2.2_vite@3.2.2
+  vite-require: 0.2.3
   vite-tsconfig-paths: 3.5.2_vite@3.2.2
 
 packages:
@@ -2206,6 +2208,12 @@ packages:
       extsprintf: 1.3.0
     dev: false
 
+  /vite-plugin-dynamic-import/1.2.3:
+    resolution: {integrity: sha512-+TBAF9f8aYHkYnA53A/mWm4Fe+xgVYebF6eNm3ILx2w9fVz7intqsP+PFPnVg7jzM9SJxUx5q31HLdA7YGTw+Q==}
+    dependencies:
+      fast-glob: 3.2.12
+    dev: true
+
   /vite-plugin-svgr/2.2.2_vite@3.2.2:
     resolution: {integrity: sha512-u8Ac27uZmDHTVGawpAhvLMJMuzbGeZGhe61TGeHoRQLxVhmQfIYCefa0iLbjC0ui1zFo6XZnS8EkzPITCYp85g==}
     peerDependencies:
@@ -2217,6 +2225,13 @@ packages:
     transitivePeerDependencies:
       - rollup
       - supports-color
+    dev: true
+
+  /vite-require/0.2.3:
+    resolution: {integrity: sha512-Lpeg5mxXiLAVrylKK9FMF8d6yxLBm6YtHXmtWpJSDSWBdl12tBsMGHOBC/fsLzATj+Zp9FHjqwzE1JayOPi9dQ==}
+    dependencies:
+      fast-glob: 3.2.12
+      vite-plugin-dynamic-import: 1.2.3
     dev: true
 
   /vite-tsconfig-paths/3.5.2_vite@3.2.2:

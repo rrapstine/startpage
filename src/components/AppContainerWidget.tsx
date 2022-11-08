@@ -2,8 +2,9 @@ import { useLayoutEffect, useState } from "react";
 import ErrorBoundary from "components/ErrorBoundary";
 import AppSelector from "./AppSelector";
 import { getAppList, toTitleCase } from "utils/helpers";
+import NotificationsContainer from "./NotificationsContainer";
 
-function NotificationsWidget() {
+function AppContainerWidget() {
   const appList = getAppList();
   const [selectedApp, setSelectedApp] = useState(appList[0].toLowerCase());
 
@@ -23,19 +24,19 @@ function NotificationsWidget() {
   }, [selectedApp]);
 
   return (
-    <div data-widget="notifications">
+    <div id="app-container">
       <ErrorBoundary>
         <AppSelector apps={appList} setSelectedApp={setSelectedApp} />
         <h2
           id="app-heading"
-          className="border-b-2 border-white text-base font-medium text-white"
+          className="mb-4 border-b-2 border-white text-base font-medium text-white"
         >
           {toTitleCase(selectedApp)}
         </h2>
-        <div id="notifications-container">{/* Notifications go here */}</div>
+        <NotificationsContainer app={selectedApp} />
       </ErrorBoundary>
     </div>
   );
 }
 
-export default NotificationsWidget;
+export default AppContainerWidget;
