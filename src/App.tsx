@@ -5,7 +5,7 @@ import NotificationsWidget from "components/NotificationsWidget";
 
 function App() {
   return (
-    <div id="app-wrapper" className="bg-home h-screen p-16">
+    <div id="app-wrapper" className="h-screen bg-home p-16">
       <Greeting />
 
       <main className="grid grid-cols-2 gap-16">
@@ -25,19 +25,19 @@ function App() {
               <div id="temperatures" className="flex flex-row gap-3">
                 <p className="text-base font-normal text-white">
                   Temp{" "}
-                  <span id="current-temp" className="text-gray-400">
+                  <span id="current-temp" className="text-gray">
                     60F
                   </span>
                 </p>
                 <p className="text-base font-normal text-white">
                   High{" "}
-                  <span id="high-temp" className="text-gray-400">
+                  <span id="high-temp" className="text-gray">
                     74F
                   </span>
                 </p>
                 <p className="text-base font-normal text-white">
                   Low{" "}
-                  <span id="low-temp" className="text-gray-400">
+                  <span id="low-temp" className="text-gray">
                     55F
                   </span>
                 </p>
@@ -77,19 +77,19 @@ function App() {
               </button>
               <button
                 data-filter="development"
-                className="text-base font-bold text-gray-400"
+                className="text-base font-bold text-gray"
               >
                 Development
               </button>
               <button
                 data-filter="entertainment"
-                className="text-base font-bold text-gray-400"
+                className="text-base font-bold text-gray"
               >
                 Entertainment
               </button>
               <button
                 data-filter="social"
-                className="text-base font-bold text-gray-400"
+                className="text-base font-bold text-gray"
               >
                 Social
               </button>

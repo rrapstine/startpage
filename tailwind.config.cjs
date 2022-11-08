@@ -11,6 +11,9 @@ module.exports = {
       backgroundImage: {
         home: "url('/src/assets/images/bg-image.webp')",
       },
+      colors: {
+        gray: "#BBBBBB",
+      },
     },
   },
   variants: {

@@ -1,21 +1,41 @@
-import React from "react";
-import { getAppList } from "utils/helpers";
+import React, { useEffect } from "react";
+import { toTitleCase } from "utils/helpers";
+import Icon from "./Icon";
 
-// Get list of apps from environment variable
-const apps = getAppList();
+interface Props {
+  apps: string[];
+  setSelectedApp: React.Dispatch<React.SetStateAction<string>>;
+}
 
-function AppSelector() {
+function AppSelector({ apps, setSelectedApp }: Props) {
+  /**
+   * Run useEffect on initial load to set the selected app to the first app in the list.
+   */
+  useEffect(() => {
+    const firstApp = apps[0].toLowerCase();
+    setSelectedApp(firstApp);
+  }, []);
+
+  /**
+   * When an icon is clicked, update the parent state to show the currently selected app.
+   * Then, change the color of the selected icon to white.
+   */
+  function handleClick(app: string) {
+    if (app) {
+      setSelectedApp(app.toLowerCase());
+    }
+  }
+
   return (
-    <>
-      <div id="app-selector" className="flex flex-row gap-4">
-        {/* TODO: Add app icons to assets/images/app_icons */}
-        {/* TODO: Loop over apps and create an icon for each app */}
-        {/* TODO: Attach an onClick listener to each icon to change the text below */}
-      </div>
-      <h2 className="border-b-2 border-white text-base font-medium text-white">
-        Reminders
-      </h2>
-    </>
+    <div id="app-selector" className="mb-4 flex flex-row gap-4">
+      {apps.map((app, key) => (
+        <Icon
+          name={app.toLowerCase()}
+          key={key}
+          onClick={() => handleClick(app)}
+        />
+      ))}
+    </div>
   );
 }
 
