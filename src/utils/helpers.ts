@@ -1,11 +1,18 @@
-// Function to get the list of wanted apps from the environment variable
+/**
+ * Function to retrieve the list of apps from the environment variable VITE_APPS
+ * @returns {string[]} - An array of strings representing the list of apps
+ */
 export function getAppList() {
   // Return the list of apps from the environment variable VITE_APPS
   const appList: string[] = import.meta.env.VITE_APPS.split(",");
   return appList;
 }
 
-// Function to change a string to Title Case
+/**
+ * Function to convert a string to Title Case
+ * @param str - The string to be converted
+ * @returns - The string in Title Case
+ */
 export function toTitleCase(str: string) {
   return str.replace(
     /\w\S*/g,

@@ -1,8 +1,11 @@
-import { useRef, useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-// Function to dynamically import SVGs, including loading and error states
-// Usage: const { Svg, loading, error } = useDynamicSvgImport(iconName)
-
+/**
+ * Custom React hook for dynamically importing SVG components.
+ *
+ * @param {string} iconName - The name of the SVG icon to import.
+ * @returns {Object} An object containing the error, loading state, and the imported SVG component.
+ */
 export function useDynamicSvgImport(iconName: string) {
   const importedIconRef = useRef<React.FC<
     React.SVGProps<SVGSVGElement>
